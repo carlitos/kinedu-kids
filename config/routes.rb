@@ -10,9 +10,8 @@ Rails.application.routes.draw do
       end
 
       resources :activities
-
-      resources :activity_logs, only: [:index, :show]
-
+      resources :activity_logs
+      resources :assistans
     end
   end
 end
