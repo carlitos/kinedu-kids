@@ -4,6 +4,9 @@ class Api::V1::BabiesController < Api::V1::BaseController
       render json: Baby.all, each_serializer: Api::V1::BabySerializer, root: false
   end
 
+  def activity_logs
+    render json: ActivityLog.baby_activities(params[:id]), each_serializer: Api::V1::BabyActivityLogsSerializer
+  end
 
   private
 
