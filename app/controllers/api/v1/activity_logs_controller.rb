@@ -3,7 +3,7 @@ class Api::V1::ActivityLogsController < Api::V1::BaseController
   before_action :set_activity_log, only: [:show, :edit, :update]
 
   def index
-      render json: ActivityLog.all, each_serializer: Api::V1::ActivityLogSerializer, root: false
+      render json: ActivityLog.all.by_start_time_desc, each_serializer: Api::V1::ActivityLogSerializer, root: false
   end
 
   def show
