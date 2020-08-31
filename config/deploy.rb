@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "kinedu-kids"
-set :repo_url, 'git@gitlab.com:carlitos.castro/vacunar-app.git'
+set :repo_url, 'git@github.com:carlitos/kinedu-kids.git'
 set :rails_env, 'production'
 set :deploy_user, 'deploy'
 set :deploy_to, "/home/deploy/#{fetch :application}"
