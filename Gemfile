@@ -23,6 +23,16 @@ group :development do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'capistrano', '~> 3.14', '>= 3.14.1'
+  gem 'capistrano-rails', '~> 1.6', '>= 1.6.1'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.2'
+  gem "capistrano-yarn"
+  gem 'capistrano-ssh-doctor', git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
+  gem 'capistrano-safe-deploy-to', '~> 1.1', '>= 1.1.1'
+
+  
 end
 
 group :test do
