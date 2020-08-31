@@ -6,6 +6,9 @@ class ActivityLog < ApplicationRecord
 
   after_update :compute_duration
 
+  before_validation :stop_time_after_start_time
+  #  validates :start_time, presence: true, timeliness: { type: :datetime }
+
   scope :baby_activities, -> (baby_id) do
     where('baby_id = ?', baby_id )
   end
@@ -26,6 +29,16 @@ class ActivityLog < ApplicationRecord
   def compute_duration
       self.duration = ( self.stop_time - self.start_time) / 1.minutes
   end
+
+  private
+
+  def stop_time_after_start_time
+
+    if stop_time < start_time
+      errors.add(:stop_time, "must be after the start date")
+    end
+
+ end
 
 
 end
