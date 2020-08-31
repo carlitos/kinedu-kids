@@ -23,7 +23,7 @@ class Api::V1::ActivityLogsController < Api::V1::BaseController
         json: Api::V1::ActivityLogSerializer.new(@activity_log).to_json,
         status: 201,
         location: api_v1_activity_log_path(@activity_log.id)
-      )
+    )
   end
 
 
@@ -32,12 +32,13 @@ class Api::V1::ActivityLogsController < Api::V1::BaseController
       render(
           json: Api::V1::ActivityLogSerializer.new(@activity_log).to_json,
           status: 200,
-          location: api_v1_activity_log_path(@activity_log.id)
+          location: api_v1_activity_log_path( @activity_log.id )
         )
     else
-      render(
-        json: 'No se pudo actualizar'
-      )
+      render json: {
+        error: "The stop time must be after the start time",
+        status: 400
+      }, status: 400
     end
   end
 
