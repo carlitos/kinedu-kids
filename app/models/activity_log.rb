@@ -13,6 +13,9 @@ class ActivityLog < ApplicationRecord
     where('baby_id = ?', baby_id )
   end
 
+  scope :by_start_time_desc, -> { order('start_time DESC') }
+
+
   def date_start
     start_time.strftime('%Y/%m/%d')
   end
