@@ -30,6 +30,14 @@ class ActivityLog < ApplicationRecord
       self.duration = ( self.stop_time - self.start_time) / 1.minutes
   end
 
+  def duration_info
+    if duration == nil
+      '*'
+    else
+      "#{duration} min"
+    end
+  end
+
   private
 
   def stop_time_after_start_time
