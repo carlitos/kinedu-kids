@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
       resources :activities
       resources :activity_logs
-      resources :assistans
+      resources :assistants
     end
   end
 end
